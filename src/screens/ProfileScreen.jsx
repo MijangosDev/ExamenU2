@@ -33,18 +33,18 @@ const ProfileScreen = ({ navigation }) => {
     { id: "4", name: "Friend 4", image: require("../../assets/150x150.png") },
   ];
 
-  // Hide the status bar when the component is mounted
+
   useEffect(() => {
     StatusBar.setHidden(true);
     return () => {
-      StatusBar.setHidden(false); // Restore the status bar when the component is unmounted
+      StatusBar.setHidden(false); 
     };
   }, []);
 
   return (
     <View style={styles.container}>
       <ScrollView style={styles.contentContainer} nestedScrollEnabled>
-        {/* Header */}
+     
         <View style={styles.header}>
           <Text style={styles.headerTitle}>facebook</Text>
           <View style={styles.headerIcons}>
@@ -53,7 +53,7 @@ const ProfileScreen = ({ navigation }) => {
           </View>
         </View>
 
-        {/* Profile Cover and Avatar */}
+        
         <View style={styles.profileInfo}>
           <Image source={require("../../assets/150x150.png")} style={styles.coverImage} />
           <View style={styles.avatarContainer}>
@@ -63,12 +63,12 @@ const ProfileScreen = ({ navigation }) => {
           </View>
         </View>
 
-        {/* Edit Profile Button */}
+        
         <TouchableOpacity style={styles.editButton}>
           <Text style={styles.editButtonText}>Editar Perfil</Text>
         </TouchableOpacity>
 
-        {/* Profile Details */}
+      
         <View style={styles.profileDetails}>
           <Text style={styles.detailLabel}>Details</Text>
           <View style={styles.profileDetail}>
@@ -85,12 +85,12 @@ const ProfileScreen = ({ navigation }) => {
           </View>
         </View>
 
-        {/* Add Story Button */}
+        
         <TouchableOpacity style={styles.addStoryButton}>
           <Text style={styles.addStoryButtonText}>Añadir Historia</Text>
         </TouchableOpacity>
 
-        {/* Friends Section */}
+        
         <View style={styles.friendsSection}>
           <Text style={styles.sectionTitle}>Friends</Text>
           <FlatList
@@ -106,7 +106,7 @@ const ProfileScreen = ({ navigation }) => {
           />
         </View>
 
-        {/* Post Input */}
+        
         <View style={styles.postInputContainer}>
           <View style={{ flexDirection: "row", alignItems: "center" }}>
             <Image source={require("../../assets/150x150.png")} style={styles.profilePic} />
@@ -118,7 +118,7 @@ const ProfileScreen = ({ navigation }) => {
           </View>
         </View>
 
-        {/* User Posts */}
+       
         <FlatList
           data={posts}
           keyExtractor={(item) => item.id}
